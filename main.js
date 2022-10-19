@@ -1,10 +1,13 @@
-function generaPrezzo() {
-    let valueChilometri = document.getElementById('quantiChilometri').value;
-    let valueEta = document.getElementById('lasuaeta').value;
+
+let Eta = prompt('Scrivimi quanti anni hai:');
+console.log(latuaeta);
+
+let Chilometri = prompt('Scrivimi i chilometri che vuoi fare:');
+console.log(chilometrichevuoifare);
 
     const priceKm = 0.21;
 
-    let ticketPrice = valueChilometri * priceKm;
+    let prezzototale = Chilometri * priceKm;
 
     let underdiscount = ticketPrice * 0.2;
 
@@ -13,11 +16,11 @@ function generaPrezzo() {
     const ticketKidPrice = ticketPrice - underdiscount;
     const ticketSeniorPrice = ticketKidPrice - upperdiscount;
 
-    if (valueEta >= 65){
+    if (Eta >= 65){
         ticketPrice = ticketSeniorPrice.toFixed(2);
     }
     
-    else if (valueEta <= 18){
+    else if (Eta <= 18){
         ticketPrice = ticketKidPrice.toFixed(2);
     }
 
@@ -26,4 +29,3 @@ function generaPrezzo() {
     }
 
     document.getElementById('prezzototale').innerHTML = "prezzototale " + ticketPrice+ "$"
-}
